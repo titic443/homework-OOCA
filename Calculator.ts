@@ -71,35 +71,61 @@ class Calculator {
 }
 
 //case1: normal
-const calculator = new Calculator()
-const order1: IOrder[] = [
+const calculator = new Calculator();
+const order1 = [
     { color: "red", amount: 1 },
-    { color: "green", amount: 1 }
-]
-console.log(calculator.order(order1, false))
-
+    { color: "green", amount: 1 },
+];
+console.log("case1: normal");
+console.log(order1);
+const result1 = calculator.order(order1, false);
+if (result1 == 90) {
+    console.log("result: Pass => " + result1 + "\n");
+} else {
+    console.log("result:Failed => Expected 90\n ");
+}
 //case2: member discount
-const calculator2 = new Calculator()
-const order2: IOrder[] = [
+const calculator2 = new Calculator();
+const order2 = [
     { color: "red", amount: 1 },
-    { color: "green", amount: 1 }
-]
-console.log(calculator2.order(order2, true))
+    { color: "green", amount: 1 },
+];
+const result2 = calculator2.order(order2, true);
+console.log("case2: memeber discount");
+console.log(order2);
+if (result2 == 81) {
+    console.log("result: Pass => " + result2 + "\n");
+} else {
+    console.log("result:Failed => Expected 81\n ");
+}
 
 //case3: special discount
-const calculator3 = new Calculator()
-const order3: IOrder[] = [
+const calculator3 = new Calculator();
+const order3 = [
     { color: "orange", amount: 2 },
     { color: "pink", amount: 2 },
-    { color: "green", amount: 2 }
-]
-console.log(calculator3.order(order3, false))
-
+    { color: "green", amount: 2 },
+];
+const result3 = calculator3.order(order3, false);
+console.log("case3: special discount");
+console.log(order3);
+if (result3 == 456) {
+    console.log("result: Pass => " + result3 + "\n");
+} else {
+    console.log("result:Failed => Expected 456\n ");
+}
 //case4: member and special discount
-const calculator4 = new Calculator()
-const order4: IOrder[] = [
+const calculator4 = new Calculator();
+const order4 = [
     { color: "orange", amount: 2 },
     { color: "pink", amount: 2 },
-    { color: "green", amount: 2 }
-]
-console.log(calculator4.order(order4, true))
+    { color: "green", amount: 2 },
+];
+const result4 = calculator4.order(order4, true);
+console.log("case4: member and special discount");
+console.log(order4);
+if (result4 == 410.4) {
+    console.log("result: Pass => " + result4 + "\n");
+} else {
+    console.log("result:Failed => Expected 410.4\n ");
+}
